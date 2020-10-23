@@ -1,12 +1,12 @@
 development:
-  adapter: mysql2
+  adapter: postgresql
   database: blogy_development
   encoding: utf8
   host: 127.0.0.1
-  username: root
+  username: postgres
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: <%= ENV["DATABASE_DATABASE"] %>
   encoding: utf8
   host: <%= ENV["DATABASE_HOST"] %>
@@ -15,8 +15,8 @@ production:
   username: <%= ENV["DATABASE_USERNAME"] %>
 
 test:
-  adapter: mysql2
+  adapter: postgresql
   database: blogy_test
   encoding: utf8
   host: 127.0.0.1
-  username: root
+  username: postgres

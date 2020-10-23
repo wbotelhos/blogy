@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_10_20_160408) do
 
-  create_table "articles", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "articles", force: :cascade do |t|
     t.datetime "published_at"
     t.string "slug", null: false
     t.string "title", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_160408) do
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
-  create_table "comments", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.boolean "author", default: false, null: false
     t.boolean "pending", default: true, null: false
     t.integer "parent_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_160408) do
     t.index ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
   end
 
-  create_table "labs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "labs", force: :cascade do |t|
     t.datetime "published_at"
     t.string "analytics"
     t.text "css_import"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_160408) do
     t.index ["title"], name: "index_labs_on_title", unique: true
   end
 
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "name", null: false
     t.string "password_hash", null: false

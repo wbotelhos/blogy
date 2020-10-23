@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 gem 'aitch'
 gem 'dotenv-rails'
-gem 'mysql2'
 gem 'nokogiri'
+gem 'pg'
 gem 'puma'
 gem 'pygments.rb'
 gem 'rails'
