@@ -9,12 +9,12 @@ jobs:
     services:
       mysql:
         env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: trust
+          POSTGRES_HOST_AUTH_METHOD: trust
 
-        image: mysql:latest
+        image: postgres:11-alpine
 
         ports:
-          - 3306:3306
+          - 5432:5432
 
     steps:
       - uses: actions/checkout@v2
